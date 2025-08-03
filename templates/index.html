@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Title}}</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI0LjkzMzEiIHdpZHRoPSI2NCIgaGVpZ2h0PSI0LjkzMzEiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeT0iMTQuNzY5MyIgd2lkdGg9IjY0IiBoZWlnaHQ9IjQuOTMzMSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSIyNC42MTU0IiB3aWR0aD0iNjQiIGhlaWdodD0iNC45MzMxIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjM0LjQ2MTUiIHdpZHRoPSI2NCIgaGVpZ2h0PSI0LjkzMzEiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeT0iNDQuMzA3NiIgd2lkdGg9IjY0IiBoZWlnaHQ9IjQuOTMzMSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSI1NC4xNTM3IiB3aWR0aD0iNjQiIGhlaWdodD0iNC45MzMxIiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIGQ9IiIgLz4KPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjI1LjYiIGhlaWdodD0iMzQuNDYxNSIgZmlsbD0iIzNDM0I2RSIvPgo8Y2lyY2xlIGN4PSI2IiBjeT0iNiIgcj0iMiIgZmlsbD0iI0ZGRkZGRiIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjYiIHI9IjIiIGZpbGw9IiNGRkZGRkYiLz4KPGNpcmNsZSBjeD0iMTgiIGN5PSI2IiByPSIyIiBmaWxsPSIjRkZGRkZGIi8+CjxjaXJjbGUgY3g9IjYiIGN5PSIxMiIgcj0iMiIgZmlsbD0iI0ZGRkZGRiIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIyIiBmaWxsPSIjRkZGRkZGIi8+CjxjaXJjbGUgY3g9IjE4IiBjeT0iMTIiIHI9IjIiIGZpbGw9IiNGRkZGRkYiLz4KPGNpcmNsZSBjeD0iNiIgY3k9IjE4IiByPSIyIiBmaWxsPSIjRkZGRkZGIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTgiIHI9IjIiIGZpbGw9IiNGRkZGRkYiLz4KPGNpcmNsZSBjeD0iMTgiIGN5PSIxOC Igcj0iMiIgZmlsbD0iI0ZGRkZGRiIvPgo8L3N2Zz4=" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header>
+    <div class="overlay"></div>
+    <img src="/static/images/header.png" alt="Header Image" class="header-image" />
+    <div class="header-content">
+        <h1>{{.Title}}</h1>
+    </div>
+</header>
+
+<main>
+    <div class="video-grid">
+        {{range .Videos}}
+        <div class="video-card">
+            <div class="video-wrapper">
+                <!-- The iframe is replaced with the standard HTML5 video tag -->
+                <video controls preload="metadata">
+                    <!-- The src now points to your local video file -->
+                    <source src="/static/videos/{{.FileName}}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <h2>{{.Title}}</h2>
+            <p>{{.Description}}</p>
+        </div>
+        {{end}}
+    </div>
+</main>
+</body>
+</html>
